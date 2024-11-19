@@ -1,0 +1,9 @@
+---
+title: "Assignment 9"
+author: "Ethan Marburger"
+format: html
+editor: visual
+---
+
+# Modeling Practice
+
