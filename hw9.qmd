@@ -165,7 +165,7 @@ rbind(mlr_fit_1 |> collect_metrics(),
       mlr_fit_3 |> collect_metrics())
 ```
 
-Best model is model 3: RMSE = 2885.54
+Best model is model 3: RMSE = 2784.05
 
 ### Fitting best MLR model (model 3) to the entire training set.
 
