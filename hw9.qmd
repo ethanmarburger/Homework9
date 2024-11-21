@@ -165,7 +165,7 @@ rbind(mlr_fit_1 |> collect_metrics(),
       mlr_fit_3 |> collect_metrics())
 ```
 
-Best model is model 3: RMSE = 2784.05
+Best model is model 3
 
 ### Fitting best MLR model (model 3) to the entire training set.
 
@@ -554,15 +554,19 @@ rf_final_fit |>
   collect_metrics()
 ```
 
-**In comparison of all final models: the tuned Random Forest model is the best!**
+**In comparison of all final models: the Multiple Linear Model is the best!**
+
+**FYI: I didn't set a seed so every time I render my quarto document the best final model changes between the MLR and Random Forest models. Most of the time, the MLR model is the best.**
 
 ## Fitting the best overall model to the entire dataset!
 
 ```{r}
-# Fit the model to the entire data set! 
-rf_final_fit <- rf_final_wkf |>
+# Fit the model to the entire dataset
+MLR_final <- workflow() |>
+  add_recipe(rec_3) |> # Recipe
+  add_model(mlr_spec) |>
   fit(data)
 
-# Print the final fitted model
-rf_final_fit
+MLR_final |>
+  tidy()
 ```
